@@ -9,19 +9,19 @@
 ## Sprint 1 Tasks
 
 ### 🔴 TODO
-- [ ] **Decision:** Choose backend platform (Firebase vs Supabase)
-- [ ] Set up backend project
-- [ ] Design database schema
+- [ ] Install Supabase CLI
+- [ ] Run automated setup script
+- [ ] Generate database schema migration
 - [ ] Implement authentication flow
 - [ ] Create API service layer
 - [ ] Migrate localStorage to backend
 - [ ] Test persistence across sessions
 
 ### 🟡 IN PROGRESS
-- None
+- [x] **Decision:** Choose backend platform → **Supabase chosen!**
 
 ### ✅ COMPLETED
-- None
+- [x] Backend platform decision (Supabase)
 
 ---
 

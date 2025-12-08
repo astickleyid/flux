@@ -6,7 +6,13 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "supabase:setup": "bash scripts/setup-supabase.sh",
+    "supabase:migrate": "bash scripts/create-schema.sh",
+    "supabase:types": "bash scripts/generate-types.sh",
+    "supabase:start": "supabase start",
+    "supabase:stop": "supabase stop",
+    "supabase:status": "supabase status"
   },
   "dependencies": {
     "@google/genai": "^1.31.0",

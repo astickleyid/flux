@@ -48,10 +48,10 @@ Chose **Option 3** - In-repo markdown system
 
 ---
 
-## Decision 2: Backend Platform (PENDING)
+## Decision 2: Backend Platform
 
 **Date:** 2024-12-08  
-**Status:** 🟡 Pending User Choice  
+**Status:** ✅ Accepted - Supabase with CLI Automation  
 
 **Context:**  
 Need persistent storage for user data, tasks, and knowledge base. Currently using localStorage which doesn't sync across devices.
@@ -78,43 +78,45 @@ Need persistent storage for user data, tasks, and knowledge base. Currently usin
 - Free: Up to 50K reads/day, 20K writes/day
 - Paid: ~$25-50/month for early growth
 
-### Option B: Supabase
+### Option B: Supabase ⭐ CHOSEN
 **Pros:**
 - PostgreSQL (relational data)
 - Open source (can self-host)
-- Good TypeScript support
+- **HIGHLY AUTOMATABLE with CLI**
 - Real-time subscriptions
 - Row-level security
-- More control
+- Auto-generated TypeScript types
+- Local development (Docker)
+- SQL migrations version controlled
 
 **Cons:**
 - Newer platform (less battle-tested)
 - Smaller ecosystem
-- Might need more setup time
-- Auth is good but less polished
+- Requires Docker for local dev
 
 **Cost Estimate:**
-- Free: 500MB database, 2GB bandwidth
+- Free: 500MB database, 2GB bandwidth, 50MB file storage
 - Paid: $25/month for Pro tier
 
 ### Option C: Custom Backend (Express + PostgreSQL)
-**Pros:**
-- Full control
-- No vendor lock-in
-- Cheapest long-term
-- Can optimize exactly for needs
+**Rejected** - Too time-consuming for MVP
 
-**Cons:**
-- Most time-consuming (2-3 weeks)
-- Need to handle auth, security, scaling
-- DevOps overhead
-- Not worth it for MVP
+**Decision:** **Supabase with CLI automation**
 
-**Recommendation:**
-**Firebase** if prioritizing speed-to-market  
-**Supabase** if prioritizing flexibility and open source
+**Rationale:**
+1. **More automatable than Firebase** - Full CLI support, schema as code
+2. **Better data model fit** - PostgreSQL for relational tasks/projects
+3. **TypeScript-first** - Auto-generated types from schema
+4. **Local-first dev** - No internet needed, full database locally
+5. **Open source** - Can self-host if needed, no vendor lock-in
+6. **Cost effective** - Cheaper at scale, generous free tier
+7. **Developer experience** - One command setup, migration system
 
-**Decision:** TBD - Awaiting user preference
+**Consequences:**
+- Need Docker installed for local development
+- Learning curve for Supabase-specific features
+- Smaller community than Firebase (but growing)
+- Will create automated setup scripts
 
 ---
 
