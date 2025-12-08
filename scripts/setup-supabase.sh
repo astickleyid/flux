@@ -23,8 +23,12 @@ echo ""
 
 # Check if Supabase CLI is installed
 if ! command -v supabase &> /dev/null; then
-    echo -e "${BLUE}📦 Installing Supabase CLI...${NC}"
-    npm install -g supabase
+    echo -e "${BLUE}📦 Installing Supabase CLI via Homebrew...${NC}"
+    if ! command -v brew &> /dev/null; then
+        echo -e "${YELLOW}⚠️  Homebrew not found. Installing Homebrew first...${NC}"
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    fi
+    brew install supabase/tap/supabase
     echo -e "${GREEN}✅ Supabase CLI installed${NC}"
 else
     echo -e "${GREEN}✅ Supabase CLI already installed ($(supabase --version))${NC}"
