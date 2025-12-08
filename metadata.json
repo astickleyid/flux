@@ -1,0 +1,7 @@
+{
+  "name": "Flux",
+  "description": "A Next-Generation Productivity Ecosystem solving the Execution Gap through behavioral psychology and calm design.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
